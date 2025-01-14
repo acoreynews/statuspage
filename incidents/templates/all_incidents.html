@@ -1,0 +1,23 @@
+{% extends "master.html" %}
+
+{% block title %}
+  All Incidents
+{% endblock %}
+  
+{% block content %}
+  
+
+  
+  <h1>Incidents</h1>
+<ul>
+  {% for x in myincidents %}
+    <a href="details/{{ x.id }}">{{ x.title }}</a>
+    <li>Date: {{ x.date }}</li>
+    <li>Status: {{ x.status }}</li>
+    <li>{{ x.message }}</li><br/>
+  {% endfor %}
+</ul>
+
+<p><a href="/">Current Status</a></p>
+
+{% endblock %}

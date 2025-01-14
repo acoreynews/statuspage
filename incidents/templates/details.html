@@ -1,0 +1,17 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Details about {{ myincident.title }}
+{% endblock %}
+
+
+{% block content %}
+<h1>{{ myincident.title }}</h1>
+  
+<p>Date: {{ myincident.date }}</p>
+<p>Status: {{ myincident.status }}</p>
+<p>Message: {{ myincident.message }}</p>
+
+<p>Back to <a href="/incidents">Incidents</a></p>
+
+{% endblock %}

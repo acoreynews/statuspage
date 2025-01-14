@@ -1,0 +1,14 @@
+body {
+    background-color: #f0f0f0;
+    color: #333333;
+    font-family: Helvetica;
+  }
+
+.container {
+    width: 960px; /* Set the desired width */
+    margin: 0 auto; /* Horizontally center the container */
+}
+
+.logo {
+  text-align: center;
+}

@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{% static 'myfirst.css' %}">
+<body>
+
+  <ul>
+    {% for x in myincidents %}
+      <a href="details/{{ x.id }}">{{ x.title }}</a>
+      <li>Date: {{ x.date }}</li>
+      <li>Status: {{ x.status }}</li>
+      <li>{{ x.message }}</li><br/>
+    {% endfor %}
+  </ul>
+
+</body>
+</html>

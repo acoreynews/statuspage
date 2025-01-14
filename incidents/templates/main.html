@@ -1,0 +1,51 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Behemoth Comics Trading Co
+
+  <title>System Status</title>
+<style>
+  .banner {
+      padding: 10px;
+      text-align: center;
+      color: white;
+  }
+  .operational { background-color: #2CAE52; } /* Green */
+  .outage { background-color: #D98B3A; }      /* Red */
+</style>
+
+{% endblock %}
+
+{% block content %}
+  
+    {% if not myincidents %}
+      <h1><div class="banner operational">
+        All Systems Operational
+    </div></h1>
+    {% else %}
+      <h1><div class="banner outage">
+        System Outage
+    </div></h1>
+    {% endif %}
+
+    <center>  
+    <h3>{{ current_datetime }}</h3>
+    </center> 
+
+  {% if myincidents %}
+  <h3>Active Incidents</h3>
+  {% endif %}
+
+  <ul>
+    {% for x in myincidents %}
+      <a href="details/{{ x.id }}">{{ x.title }}</a>
+      <li>Date: {{ x.date }}</li>
+      <li>Status: {{ x.status }}</li>
+      <li>{{ x.message }}</li><br/>
+    {% endfor %}
+  </ul>
+  
+
+  <h4>View all <a href="incidents/">incidents</a></h4>
+  
+{% endblock %}

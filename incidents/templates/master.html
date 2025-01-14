@@ -1,0 +1,23 @@
+{% load static %}
+<html>
+  <div class="container">
+  <div class="logo">
+      <img alt="Behemoth Comics Trading Co" src="{% static 'Behemoth Comics Trading Co.png' %}">
+    </a>
+  </div>
+
+
+<link rel="stylesheet" href="{% static 'myfirst.css' %}">
+
+
+<head>
+  <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</div>
+</html>
